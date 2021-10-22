@@ -6,7 +6,6 @@ getgenv().thisvalue = "my name";
 
 local remotePath = game:GetService("ReplicatedStorage").Aero.AeroRemoteServices;
 
-function doTap()
     spawn(function()
         while autoTap == true do
             local args = {[1] = 1}
@@ -14,7 +13,6 @@ function doTap()
             wait()
         end
     end)
-end
 
 function autoRebirth(rebirthAmount)
     spawn(function()
@@ -66,4 +64,4 @@ teleportWorld("Desert") -- Change Desert to whatever world you want to go into
 
 
 
-game.Players.LocalPlayer.Character.Head.NameTag.Frame.Visible = false; -- Safety ban check (Hides Name)
+game.Players.LocalPlayer.Character.Head.NameTag.Frame.Visible = false; -- Safety ban check (Hides Nametag)
