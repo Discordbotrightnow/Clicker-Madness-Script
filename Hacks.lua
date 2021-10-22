@@ -66,4 +66,4 @@ teleportWorld("Desert") -- Change Desert to whatever world you want to go into
 
 
 
-game.Players.LocalPlayer.Character.Head.NameTag.Frame.Visible = false; -- Safety ban check (Hides Nametag)
+game.Players.LocalPlayer.Character.Head.NameTag.Frame.Visible = false; -- Safety ban check (Hides Name)
