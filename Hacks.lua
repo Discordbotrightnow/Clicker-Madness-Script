@@ -2,15 +2,21 @@ getgenv().autoTap = false;
 getgenv().autoRebirth = false;
 getgenv().buyEgg = false;
 
-
 local remotePath = game:GetService("ReplicatedStorage").Aero.AeroRemoteServices;
 
+local clickMod = require(game:GetService("Players").LocalPlayer.PlayerScripts.Aero.Controllers.UI.Click)
+
+
+
+function unlockGamepasses()
+    local gamepassMod = require(game:GetService("ReplicatedStorage").Aero.Shared.Gamepasses)
+    gamepassMod.HasPassOtherwisePrompt = function() return true end
+end
 
 function doTap()
     spawn(function()
         while getgenv().autoTap == true do
-            local args = {[1] = 1}
-            remotePath.ClickService.Click:FireServer(unpack(args))
+            clickMod:Click()
             wait()
         end
     end)
@@ -85,7 +91,6 @@ b:Dropdown("Rebirth Amt",{"1","10","100", "1000"},true,function(value)
     selectedRebirth = value;
      print(value)
  end)
-
 b:Toggle("Auto Rebirth",function(bool)
     getgenv().autoRebirth = bool
     print('Auto Rebirth is: ', bool);
