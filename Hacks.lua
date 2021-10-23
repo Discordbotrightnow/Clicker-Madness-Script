@@ -1,36 +1,3 @@
-local mod = require(game:GetService("Players").LocalPlayer.PlayerScripts.Aero.Controllers.UI.Pets)
-
-print("--UPVALUES--")
-for i,v in pairs(getupvalues(mod.CalculatePetCapacity)) do
-    print(i,v);
-end
-print("---")
-print("--CONSTANTS")
-for i,v in pairs(getconstants(mod.CalculatePetCapacity)) do
-    print(i,v);
-end
-setconstant(mod.CalculatePetCapacity, 7, 1000)
-
-
-
-
-setupvalue(calculateDamage, 1, 500)
-
-print("Total Damage: ", calculateDamage())
-
-
-
-
-function attackEnemy(enemy, player)
-    enemy.Health = enemy.Health - calculateDamage();
-end
-
-
-
-
-
-
-
 getgenv().autoTap = false;
 getgenv().autoRebirth = false;
 getgenv().buyEgg = false;
